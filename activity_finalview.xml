@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A8E6CF"
+    android:padding="16dp">
+
+    <!-- Logo -->
+
+    <!-- Title -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/workspaceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:text="Wind Turbine Monitoring"
+        android:textSize="28sp"
+        android:textColor="#008577"
+        android:fontFamily="sans-serif-black"
+        android:shadowColor="#3D3D3D"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:letterSpacing="0.1"
+        android:textStyle="bold"
+        android:padding="8dp"/>
+
+
+    <!-- Real-time Clock -->
+    <TextView
+        android:id="@+id/currentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="12:00 PM"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:fontFamily="sans-serif" />
+
+    <!-- Monitoring Grid -->
+    <GridLayout
+        android:id="@+id/monitoringGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/workspaceTitle"
+        android:layout_marginTop="16dp"
+        android:columnCount="2"
+        android:rowCount="3"
+        android:orientation="horizontal"
+        android:alignmentMode="alignBounds"
+        android:rowOrderPreserved="false"
+        android:useDefaultMargins="true">
+
+        <!-- Battery Current -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#A8E6CF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+                <TextView
+                    android:id="@+id/batteryCurrent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="18%"
+                    android:textSize="24sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif-medium" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/batteryCurrent"
+                    android:text="Battery Current"
+                    android:textSize="14sp"
+                    android:textColor="#555555" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Turbine Current -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#A8E6CF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+                <TextView
+                    android:id="@+id/turbineCurrent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11%"
+                    android:textSize="24sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif-medium" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/turbineCurrent"
+                    android:text="Turbine Current"
+                    android:textSize="14sp"
+                    android:textColor="#555555" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Battery Voltage -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#A8E6CF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+                <TextView
+                    android:id="@+id/batteryVoltage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9%"
+                    android:textSize="24sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif-medium" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/batteryVoltage"
+                    android:text="Battery Voltage"
+                    android:textSize="14sp"
+                    android:textColor="#555555" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Turbine Voltage -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#A8E6CF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+                <TextView
+                    android:id="@+id/turbineVoltage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10%"
+                    android:textSize="24sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif-medium" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/turbineVoltage"
+                    android:text="Turbine Voltage"
+                    android:textSize="14sp"
+                    android:textColor="#555555" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Anemometer (Wind Speed) -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#A8E6CF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+                <TextView
+                    android:id="@+id/windSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5.5 m/s"
+                    android:textSize="24sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif-medium" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/windSpeed"
+                    android:text="Wind Speed"
+                    android:textSize="14sp"
+                    android:textColor="#555555" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Total Power -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#A8E6CF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+                <TextView
+                    android:id="@+id/totalPower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="126 KW/H"
+                    android:textSize="24sp"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif-medium" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/totalPower"
+                    android:text="Total Power (kWh)"
+                    android:textSize="14sp"
+                    android:textColor="#555555" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+</RelativeLayout>
